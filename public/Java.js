@@ -21,10 +21,10 @@ function fetchGif(){
 
 
 function displayGif(json){
+document.querySelector('.carousel').style.display = 'flex';
 for (let i=0; i < json.data.length; i++){
-    document.getElementById(`carousel${i}`).src = json.data[i].embed_url;
-    console.log(json.data[i].embed_url)
-
-
+    document.getElementById(`carousel${i}`).style.height = "400px"
+    document.getElementById(`carousel${i}`).src = json.data[i].images.original.url;
+        console.log(json.data[i].images.original.url);
 }  
 }
